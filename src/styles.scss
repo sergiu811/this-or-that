@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+@import "@angular/material/prebuilt-themes/azure-blue.css";
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: linear-gradient(90deg, #edece7 50%, #252727 50%);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.login-container,
+.signup-container,
+.reset-password-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 50px auto;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

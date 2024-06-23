@@ -1,0 +1,28 @@
+<div class="home-container">
+  <h1>This or that?</h1>
+  @if (photos.length > 0) {
+  <div class="home-container__images">
+    @for (photo of photos; track photo.id) {
+    <div class="photo-container">
+      <img
+        [src]="photo.url"
+        (click)="selectPhoto(photo.id)"
+        [class.selected]="photo.id === selectedPhotoId"
+      />
+      @if (showOverlay) {
+      <div class="photo-overlay">
+        <mat-progress-spinner
+          class="circle"
+          [color]="'purple'"
+          [mode]="'determinate'"
+          [value]="getClickPercentage(photo.id)"
+        >
+        </mat-progress-spinner>
+        <p class="text">{{ getClickPercentage(photo.id) }}%</p>
+      </div>
+      }
+    </div>
+    }
+  </div>
+  }
+</div>

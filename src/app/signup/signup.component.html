@@ -1,0 +1,51 @@
+<div class="signup-container">
+  <h2>Sign Up</h2>
+  <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username" type="text" />
+      <mat-error
+        *ngIf="
+          signupForm.get('username')?.invalid &&
+          signupForm.get('username')?.touched
+        "
+      >
+        Username is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password" />
+      <mat-error
+        *ngIf="
+          signupForm.get('password')?.invalid &&
+          signupForm.get('password')?.touched
+        "
+      >
+        Password is required (minimum 6 characters)
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Confirm Password</mat-label>
+      <input matInput formControlName="confirmPassword" type="password" />
+      <mat-error
+        *ngIf="
+          signupForm.get('confirmPassword')?.invalid &&
+          signupForm.get('confirmPassword')?.touched
+        "
+      >
+        Confirm Password is required
+      </mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="signupForm.invalid"
+    >
+      Sign Up
+    </button>
+  </form>
+
+  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+</div>
